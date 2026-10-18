@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>砚台记 · 电脑使用时光</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Zen+Old+Mincho:wght@400;700;900&display=swap"
+			rel="stylesheet">
+		<link rel="stylesheet" href="./css/index.css">
+	</head>
+	<body>
+		<div class="scroll"> <!-- 印章 -->
+			<div class="seal-area"> <span class="seal">砚台记</span> </div> <!-- 标题 -->
+			<div class="title-section">
+				<div class="era">癸卯年 · 七月廿三</div>
+				<h1> <span class="char-1">砚</span><span class="char-2">台</span><span class="char-3">记</span>
+				</h1>
+				<div class="subtitle">一台电脑的时光刻度 · 二十年为限</div>
+				<div class="brush-stroke"></div>
+			</div>
+
+			<!-- 匾额：总天数 -->
+			<div class="plaque">
+				<div class="plaque-header">已 相 伴</div>
+				<div class="plaque-number" id="heroDays">0</div>
+				<div class="plaque-unit">日</div>
+				<span class="plaque-corner tl"></span>
+				<span class="plaque-corner tr"></span>
+				<span class="plaque-corner bl"></span>
+				<span class="plaque-corner br"></span>
+			</div>
+
+			<!-- 双栏详情 -->
+			<div class="spread">
+				<div class="spread-pane">
+					<div class="pane-label">详 情</div>
+					<ul class="info-list" id="detailInfo"></ul>
+				</div>
+				<div class="spread-pane">
+					<div class="pane-label">周 年</div>
+					<div id="anniversaryInfo"></div>
+				</div>
+			</div>
+
+			<!-- 竹简：二十年为限 -->
+			<div class="bamboo-slips">
+				<div class="slip-label">竹 简 · 廿 年 为 限</div>
+
+				<!-- 二十年进度条 -->
+				<div class="twenty-year-bar" id="twentyYearBar"></div>
+
+				<!-- 里程碑 -->
+				<div class="slip-list" id="milestones"></div>
+			</div>
+
+			<!-- 操作 -->
+			<div class="action-tray">
+				<button class="btn btn-solid" onclick="refreshData()">刷新数据</button>
+				<button class="btn btn-outline" onclick="viewFutureDate()">查看未来</button>
+				<button class="btn btn-ghost" onclick="saveReport()">保存报告</button>
+			</div>
+
+			<!-- 页脚时钟 -->
+			<div class="footer-time" id="liveTime"></div>
+
+		</div>
+
+		<!-- 未来日期模态框 -->
+		<div class="modal-overlay" id="futureModal">
+			<div class="modal-letter">
+				<h3>择一日 · 观其刻度</h3>
+				<input type="date" id="futureDate">
+				<div class="modal-actions">
+					<button class="btn btn-ghost" onclick="closeModal()">取消</button>
+					<button class="btn btn-solid" onclick="calculateFuture()">推算</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="./js/index.js"></script>
+	</body>
+</html>
